@@ -14,6 +14,8 @@
  import com.facens.lista_personagem.R;
  import com.facens.lista_personagem.dao.personagemDao;
  import com.facens.lista_personagem.model.Personagem;
+ import com.github.rtoshiro.util.format.SimpleMaskFormatter;
+ import com.github.rtoshiro.util.format.text.MaskTextWatcher;
 
  import static com.facens.lista_personagem.ui.activities.ConstantesActivitie.CHAVE_PERSONAGEM;
 
@@ -110,14 +112,14 @@
          campoAltura = findViewById(R.id.string_altura);
          campoNascimento = findViewById(R.id.string_nascimento);
 
-       /*  SimpleMaskFormatter smfAltura = new SimpleMaskFormatter("N,NN");
+         SimpleMaskFormatter smfAltura = new SimpleMaskFormatter("N,NN");
          MaskTextWatcher mtwAltura = new MaskTextWatcher(campoAltura, smfAltura);
          campoAltura.addTextChangedListener(mtwAltura);
 
          SimpleMaskFormatter smfNascimento = new SimpleMaskFormatter("NN/NN/NNNN");
          MaskTextWatcher mtwNascimento = new MaskTextWatcher(campoNascimento, smfNascimento);
          campoNascimento.addTextChangedListener(mtwNascimento);
-*/
+
 
 
 

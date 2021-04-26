@@ -46,7 +46,8 @@
             android:layout_marginRight="186dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Descript:" />
+            android:text="Nascimeto:"
+            tools:visibility="visible" />
 
         <EditText
             android:id="@+id/string_altura"
@@ -58,7 +59,7 @@
             android:layout_marginRight="186dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Date:" />
+            android:text="Altura:" />
 
 </LinearLayout>
 </ScrollView>

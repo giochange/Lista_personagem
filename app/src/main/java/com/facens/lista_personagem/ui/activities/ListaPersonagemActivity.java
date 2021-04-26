@@ -37,7 +37,7 @@ public class ListaPersonagemActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_personagem);
-        // seta o titulo//
+        // seta o titulo atravez da variavel criada
         setTitle(TIULO_APPBAR);
         // metodo responsavel pelo botao
         configBtAddPerson();
@@ -47,8 +47,10 @@ public class ListaPersonagemActivity extends AppCompatActivity {
     }
 
     private void configBtAddPerson() {
+       // reaaliza a chamada de um activity para em seguidar direcionar a outro local
         FloatingActionButton botaoSalvar = findViewById(R.id.fab_add);
         botaoSalvar.setOnClickListener(new View.OnClickListener() {
+           // inicia o start activity
             @Override
             public void onClick(View v) {
                 abreFormulario();
@@ -63,13 +65,13 @@ public class ListaPersonagemActivity extends AppCompatActivity {
 
     //cria uma proteção para os dados fazendo eles nao serem apagado quando clicar em voltar//
     @Override
-    protected void onResume() {
+    protected void onResume() {// faz as informações se manterem independente do estado
         super.onResume();
         atualizaPersonagem();
     }
     private void atualizaPersonagem() {
-        adapter.clear();
-        adapter.addAll(dao.todos());
+        adapter.clear(); //limpeza de informação dentro da lista
+        adapter.addAll(dao.todos());// adição de todos dentro da lista
     }
 //metodo para remoção de personagem para não duplicar ids
     private void remove(Personagem personagem){
@@ -111,7 +113,7 @@ public class ListaPersonagemActivity extends AppCompatActivity {
                     })
 
                     .setNegativeButton("não", null)
-                    .show();
+                    .show();//faz a aparição na interface//
         }
         return super.onContextItemSelected(item);
 
@@ -145,15 +147,16 @@ public class ListaPersonagemActivity extends AppCompatActivity {
         });
     }
 
-    //local
+
     private void abreFormularioEditar(Personagem personagemEscolhido) {
         Intent vaiParaFormulario = new Intent(ListaPersonagemActivity.this, FormurioDePersonagemActivity.class);
+        //realiza o transicionamento das informações que irão para o formulario
         vaiParaFormulario.putExtra(CHAVE_PERSONAGEM, personagemEscolhido);
         startActivity(vaiParaFormulario);
     }
 
     private void listaDePernsonagens(ListView listpersonagem) {
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
-        listpersonagem.setAdapter(adapter);
+        listpersonagem.setAdapter(adapter);//definição dos dados atrás do listview
     }
 }
